@@ -1,0 +1,34 @@
+{% extends 'student/studentheader.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container m-2">
+    <div class="card mx-auto p-3" style="width: 28rem;">
+
+        <img src="{{ stud.stud_image.url }}" class="card-img-top w-50 mx-auto" alt="...">
+        <div class="card-body">
+            <h4 class="card-title mx-auto" style="width:fit-content;">Name</h4>
+            <div class="detail-box">
+
+                <div>
+                    {% for x in stud %}
+                    <p class="card-text">Email: {{x.email}}</p>
+                    <p class="card-text">Phone No: {{x.phone}}</p>
+                    <p class="card-text">Branch: {{x.branch}}</p>
+                    <p class="card-text">Year: {{x.year}}</p>
+                    <p class="card-text">Semester: {{x.sem}}</p>
+                    <p class="card-text">No.of Backlog {{x.backlog}}</p>
+
+                    <a href="/Edit_student/{{x.id}}" class="btn btn-primary d-block">Edit</a>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}

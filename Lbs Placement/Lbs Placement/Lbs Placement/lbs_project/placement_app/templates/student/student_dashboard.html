@@ -1,0 +1,46 @@
+{% extends 'student/studentheader.html' %}
+{% load static %}
+{% block content %}
+    
+        <div class="container">
+            <h2 class="text-center mb-5 display-6 font-weight-bold">Student Dashboard</h2>
+            <div class="row">
+                <!-- Job Posts -->
+                <div class="col-md-6 d-flex justify-content-center">
+                    <div class="card">
+                        <img src="megaphone.png" class="card-img-top" alt="Job Posts">
+                        <h4 class="text-center job-header">Job Posts</h4>
+                        <div class="card-body">
+                            <ul class="card-body-list">
+                                {% for x in jobs %}
+                                <li>job position {{x.job_position}} posted by {{x.company_id.company_name}} </li>
+                                Post date : {{x.created_date}}
+                                {% endfor %}
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="col-md-6 d-flex justify-content-center">
+                    <div class="card">
+                        <img src="notice.png" class="card-img-top" alt="Job Posts">
+                        <h4 class="text-center job-header">Notifications</h4>
+                        <div class="card-body">
+                            <ul class="card-body-list">
+                                <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ipsa voluptas neque
+                                    quod, nobis odit unde voluptatum minus eligendi sunt iure! Dolor deleniti doloribus
+                                    delectus amet perferendis vitae modi consectetur.</li>
+                                <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ipsa voluptas neque
+                                    quod, nobis odit unde voluptatum minus eligendi sunt iure! Dolor deleniti doloribus
+                                    delectus amet perferendis vitae modi consectetur.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {% endblock %}
+   

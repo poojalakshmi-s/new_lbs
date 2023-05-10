@@ -1,0 +1,74 @@
+{% extends 'TPO/tpo_header.html' %}
+{% load static %}
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="card-div d-flex justify-content-center align-items-center">
+        <div class="card">
+            <img src="{% static 'img/add-tpo.png' %}"  class="py-4" alt="Job Posts" width="300" style="margin: auto;overflow: auto;">
+            <h4 class="text-center job-header">Add Company</h4>
+            <div class="card-body">
+                <form method="POST">
+                    {% csrf_token %}
+                    {% if messages %} {% for message in messages %}
+                    <div class="alert alert-danger">{{message}}</div>
+                    {% endfor %} {% endif %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-4">
+                                <label for="name" class="form-label">Company Name</label>
+                                <input type="text" class="form-control" name="name" id="name" aria-describedby="name"
+                                    placeholder="Enter Name">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-4">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" name="email" id="email"
+                                    aria-describedby="email" placeholder="Enter Email">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-4">
+                                <label for="jdate" class="form-label">Comapny Address</label>
+                                <textarea class="form-control" name="address" id="address" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-4">
+                                <label for="phone" class="form-label">Company Number</label>
+                                <input type="tel" class="form-control" name="number" id="phone"
+                                    placeholder="Enter Phone Number">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-4">
+                                <label for="name" class="form-label">Contact Person Name</label>
+                                <input type="text" class="form-control" name="person_name" id="name"
+                                    aria-describedby="name" placeholder="Enter Name">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-4">
+                                <label for="phone" class="form-label">Contact Person Number</label>
+                                <input type="tel" class="form-control" name="person_number" id="phone"
+                                    placeholder="Enter Phone Number">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-4">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" name="password" id="password"
+                                    placeholder="Enter Password">
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <button type="submit" class="btn btn-primary tpo-submit">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'TPO/tpo_header.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <!-- Job Posts -->
+    <div class="col-md-6 d-flex justify-content-center">
+      <div class="card">
+        <img src="{% static 'img/megaphone.png' %}" class="card-img-top" alt="Job Posts">
+        <h4 class="text-center job-header">Job Posts</h4>
+        <div class="card-body">
+          <ul class="card-body-list">
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ipsa voluptas neque quod, nobis odit unde
+              voluptatum minus eligendi sunt iure! Dolor deleniti doloribus delectus amet perferendis vitae modi
+              consectetur.</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ipsa voluptas neque quod, nobis odit unde
+              voluptatum minus eligendi sunt iure! Dolor deleniti doloribus delectus amet perferendis vitae modi
+              consectetur.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!--Company Announcements -->
+    <div class="col-md-6 d-flex justify-content-center">
+      <div class="card">
+        <img src="{% static 'img/notice.png' %}" class="card-img-top" alt="Job Posts">
+        <h4 class="text-center job-header">Company Announcements</h4>
+        <div class="card-body">
+          <ul class="card-body-list">
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ipsa voluptas neque quod, nobis odit unde
+              voluptatum minus eligendi sunt iure! Dolor deleniti doloribus delectus amet perferendis vitae modi
+              consectetur.</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ipsa voluptas neque quod, nobis odit unde
+              voluptatum minus eligendi sunt iure! Dolor deleniti doloribus delectus amet perferendis vitae modi
+              consectetur.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

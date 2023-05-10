@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>LBS- Placement Cell</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon" />
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet" />
+  <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> -->
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+      <!-- <h1 class="logo me-auto"><a href="index.html">LBS</a></h1> -->
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <a href="index.html" class="logo me-auto"><img src="{% static 'img/lbs.png' %}" alt="" class="img-fluid" /></a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+
+          <!-- <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+  
+                <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                  <ul>
+                    <li><a href="#">Deep Drop Down 1</a></li>
+                    <li><a href="#">Deep Drop Down 2</a></li>
+                    <li><a href="#">Deep Drop Down 3</a></li>
+                    <li><a href="#">Deep Drop Down 4</a></li>
+                    <li><a href="#">Deep Drop Down 5</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li> -->
+          <li><a href="#">Placements</a></li>
+          <li><a href="announcement.html">Announcemets</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/Login_page/" class="getstarted">Login</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- .navbar -->
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <main id="main">
+    <div class="main">
+      <div class="container d-flex justify-content-center">
+        <section class="wrapper">
+          <div class="heading">
+            <div class="avt d-flex justify-content-center">
+              <img src="{% static 'img/user.png' %}" width="50" />
+            </div>
+            <h1 class="text text-large text-center">Sign Up</h1>
+            <p class="text text-normal text-center">
+              Already Have An Account?
+              <span><a href="/Login_page/" class="text text-links">Login</a></span>
+            </p>
+          </div>
+          <form method="POST" action="/Signup_page/" enctype="multipart/form-data" class="form">
+            {% csrf_token %}
+            {% if messages %} {% for message in messages %}
+            <div class="alert alert-danger">{{message}}</div>
+            {% endfor %} {% endif %}
+            <div class="input-control">
+              <label for="text" class="input-label" hidden>Your Name</label>
+              <input type="text" name="name" id="name" required class="input-field" placeholder="Your Name" />
+            </div>
+            <div class="input-control">
+              <label for="email" class="input-label" hidden>Email Address</label>
+              <input type="email" name="email" id="email" required class="input-field" placeholder="Email Address" />
+            </div>
+            <div class="input-control">
+              <label for="tel" class="input-label" hidden>Phone Number</label>
+              <input type="tel" name="phone" id="tel" required class="input-field" placeholder="Phone Number" />
+            </div>
+            <div class="input-control">
+              <label for="text" class="input-label" hidden>Your Name</label>
+              <select name="branch" class="form-control">
+                <option value="select">Select Brach</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="IT">IT</option>
+                <option value="Electronics & Communication">Electronics & Communication</option>
+                <option value="Civil Eng">Civil Eng</option>
+              </select>
+            </div>
+            <div class="input-control">
+              <label for="text" class="input-label" hidden>Your Name</label>
+              <input type="text" name="year" id="year" required class="input-field" placeholder="Year" />
+            </div>
+            <div class="input-control">
+              <label for="text" class="input-label" hidden>Your Name</label>
+              <input type="text" name="semester" id="semester" required class="input-field" placeholder="Semester" />
+            </div>
+            <div class="input-control">
+              <label for="text" class="input-label" hidden>Your Name</label>
+              <input type="text" name="backlogs" id="backlogs" required class="input-field"
+                placeholder="No.of Backlogs" />
+            </div>
+            <div class="input-control">
+              <label for="resume" class="input-label">Resume</label>
+              <br />
+              <input type="file" name="resume" id="resume" required />
+            </div>
+            <div class="input-control">
+              <label for="image" class="input-label">Upload Image</label>
+              <br />
+              <input type="file" name="stud_image" id="image" required />
+            </div>
+
+            <div class="input-control">
+              <input type="submit" name="submit" class="input-submit" value="Sign Up" />
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+  <!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-div pt-4">
+        <ul>
+          <li>Training and Placement Officer</li>
+          <li>Phone Number : +91 9876543210</li>
+          <li>
+            Email:
+            <a class="footer-email-link" href="mailto:demo@gmail.com">demo@gmail.com</a>
+          </li>
+          <li><a class="footer-links" href="#">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>LBS-Placement Cell</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://lbt.ac.in/">LBS</a>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/waypoints/noframework.waypoints.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+{% extends 'student/studentheader.html' %}
+{% load static %}
+{% block content %}
+<div class="home-content">
+  <i class='bx bx-menu'></i>
+  <button class="btn btn-danger " type="button">Logout</button>
+</div>
+
+<div class="container m-2">
+  <h3 class="text-center">Edit Details</h3>
+  <form method="POST" enctype="multipart/form-data" class="p-3">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-md-4">
+        <label>Name</label>
+        <input type="text" name="name" value="{{stud.name}}" class="form-control">
+      </div>
+      <div class="col-md-4">
+        <label>Email</label>
+        <input type="email" name="email" value="{{stud.email}}" class="form-control">
+      </div>
+      <div class="col-md-4">
+        <label>Phone Number</label>
+        <input type="text" name="phone" value="{{stud.phone}}" class="form-control">
+      </div>
+      <div class="col-md-4">
+        <label>Branch</label>
+        <input type="text" name="branch" value="{{stud.branch}}" class="form-control">
+      </div>
+      <div class="col-md-4">
+        <label>Year</label>
+        <input type="text" name="year" value="{{stud.year}}" class="form-control">
+      </div>
+      <div class="col-md-4">
+        <label>Semester</label>
+        <input type="text" name="sem" value="{{stud.sem}}" class="form-control">
+      </div>
+      <div class="col-md-4">
+        <label>No.of Backlogs</label>
+        <input type="text" name="backlog" value="{{stud.backlog}}" class="form-control">
+      </div>
+      <div class="col-md-4">
+        <label>Image</label>
+        <input type="file" name="stud_image" id="stud_image" class="form-control">
+        <span id="stud_image_name">{{ stud.stud_image.name }}</span>
+      </div>
+      <div class="col-md-4">
+        <label>Resume</label>
+        <input type="file" id="resume" name="resume" class="form-control">
+        <span id="stud_resume_name">{{ stud.resume.name }}</span>
+      </div>
+
+
+    </div>
+    <button type="submit" class="btn btn-primary my-5 d-block mx-auto" style="width: 15rem;">Submit</button>
+  </form>
+</div>
+<script>
+  const inputField = document.getElementById('stud_image');
+  const fileNameField = document.getElementById('stud_image_name');
+
+  inputField.addEventListener('change', () => {
+    const fileName = inputField.files[0].name;
+    fileNameField.textContent = fileName;
+  });
+</script>
+<script>
+  const input = document.getElementById('resume');
+  const file = document.getElementById('stud_resume_name');
+
+  input.addEventListener('change', () => {
+    const fileName = input.files[0].name;
+    file.textContent = fileName;
+  });
+</script>
+{% endblock %}

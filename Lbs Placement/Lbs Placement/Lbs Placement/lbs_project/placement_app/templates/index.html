@@ -1,0 +1,392 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>LBS- Placement Cell</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link href="{% static'vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> -->
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <!-- <h1 class="logo me-auto"><a href="index.html">LBS</a></h1> -->
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <a href="/index_page/" class="logo me-auto"><img src="{% static 'img/lbs.png' %}" alt="" class="img-fluid"></a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="/">Home</a></li>
+
+          <!-- <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="about.html" class="active">About</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li> -->
+          <li><a href="#">Placements</a></li>
+          <li><a href="/announcement_page/">Announcemets</a></li>
+          <li><a href="/contact_page/">Contact</a></li>
+          <li><a href="/Login_page/" class="getstarted">Login</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="owl-carousel owl-theme">
+      <div class="item">
+        <img src="{% static 'img/slide/slide-1.jpg' %}" alt="slide" style="width:100%">
+      </div>
+      <div class="item">
+        <img src="{% static 'img/slide/slide-2.jpg' %}" alt="slide" style="width:100%">
+      </div>
+      <div class="item">
+        <img src="{% static 'img/slide/slide-1.jpg' %}" alt="slide" style="width:100%">
+      </div>
+      <div class="item">
+        <img src="{% static 'img/slide/slide-2.jpg' %}" alt="slide" style="width:100%">
+      </div>
+      <div class="item">
+        <img src="{% static 'img/slide/slide-1.jpg' %}" alt="slide" style="width:100%">
+      </div>
+      <div class="item">
+        <img src="{% static 'img/slide/slide-2.jpg' %}" alt="slide" style="width:100%">
+      </div>
+      <div class="item">
+        <img src="{% static 'img/slide/slide-1.jpg' %}" alt="slide" style="width:100%">
+      </div>
+      <div class="item">
+        <img src="{% static 'img/slide/slide-2.jpg' %}" alt="slide" style="width:100%">
+      </div>
+
+    </div>
+  </section><!-- End Hero -->
+
+  <main id=" main">
+
+    <section>
+      <section class="counter-section">
+        <h2>In 2023 ...</h2>
+        <div class="counter-container">
+          <div class="counter">
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="counter-value" data-count="100">0</div>
+              <span class="plus-icon"><i class="fa-solid fa-plus"></i></span>
+            </div>
+            <p>Companies</p>
+          </div>
+          <div class="counter">
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="counter-value" data-count="500">0</div>
+              <span class="plus-icon"><i class="fa-solid fa-plus"></i></span>
+            </div>
+            <p>Number of Offers</p>
+          </div>
+          <div class="counter">
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="counter-value" data-count="10">0</div>
+              <span class="plus-icon"><i class="fa-solid fa-plus"></i></span>
+            </div>
+            <p>Average LPA</p>
+          </div>
+        </div>
+      </section>
+
+    </section>
+
+    <div class="bg-att">
+
+    </div>
+
+    <section class="announcements-index">
+      <!-- <h2>Latest Announcements</h2> -->
+      <div class="wrap">
+        <h3 class="text-white p-3">Latest Announcements</h3>
+        <div class="v-slider">
+          <div class="slider__row" id="row">
+
+            <div class="announcement-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <h4>Announcement Title</h4>
+                <div class="re-dates">
+                  <span>05-03-2023</span>
+                </div>
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus laborum facilis
+                name...<span><a href="announcement.html">Read More...</a></span>
+              </p>
+              <div class="card-footer d-flex justify-content-between">
+                <div class="recruiter">
+                </div>
+              </div>
+            </div>
+
+            <div class="announcement-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <h4>Announcement Title</h4>
+                <div class="re-dates">
+                  <span>05-03-2023</span>
+                </div>
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus laborum facilis
+                name...<span><a href="announcement.html">Read More...</a></span>
+              </p>
+              <div class="card-footer d-flex justify-content-between">
+                <div class="recruiter">
+                </div>
+              </div>
+            </div>
+
+            <div class="announcement-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <h4>Announcement Title</h4>
+                <div class="re-dates">
+                  <span>05-03-2023</span>
+                </div>
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus laborum facilis
+                name...<span><a href="announcement.html">Read More...</a></span>
+              </p>
+              <div class="card-footer d-flex justify-content-between">
+                <div class="recruiter">
+                </div>
+              </div>
+            </div>
+
+            <div class="announcement-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <h4>Announcement Title</h4>
+                <div class="re-dates">
+                  <span>05-03-2023</span>
+                </div>
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus laborum facilis
+                name...<span><a href="announcement.html">Read More...</a></span>
+              </p>
+              <div class="card-footer d-flex justify-content-between">
+                <div class="recruiter">
+                </div>
+              </div>
+            </div>
+
+            <div class="announcement-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <h4>Announcement Title</h4>
+                <div class="re-dates">
+                  <span>05-03-2023</span>
+                </div>
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus laborum facilis
+                name...<span><a href="announcement.html">Read More...</a></span>
+              </p>
+              <div class="card-footer d-flex justify-content-between">
+                <div class="recruiter">
+                </div>
+              </div>
+            </div>
+
+            <div class="announcement-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <h4>Announcement Title</h4>
+                <div class="re-dates">
+                  <span>05-03-2023</span>
+                </div>
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus laborum facilis
+                name...<span><a href="announcement.html">Read More...</a></span>
+              </p>
+              <div class="card-footer d-flex justify-content-between">
+                <div class="recruiter">
+                </div>
+              </div>
+            </div>
+
+            <div class="announcement-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <h4>Announcement Title</h4>
+                <div class="re-dates">
+                  <span>05-03-2023</span>
+                </div>
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus laborum facilis
+                name...<span><a href="announcement.html">Read More...</a></span>
+              </p>
+              <div class="card-footer d-flex justify-content-between">
+                <div class="recruiter">
+                </div>
+              </div>
+            </div>
+
+            <div class="announcement-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <h4>Announcement Title</h4>
+                <div class="re-dates">
+                  <span>05-03-2023</span>
+                </div>
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus laborum facilis
+                name...<span><a href="announcement.html">Read More...</a></span>
+              </p>
+              <div class="card-footer d-flex justify-content-between">
+                <div class="recruiter">
+                </div>
+              </div>
+            </div>
+
+            <div class="announcement-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <h4>Announcement Title</h4>
+                <div class="re-dates">
+                  <span>05-03-2023</span>
+                </div>
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus laborum facilis
+                name...<span><a href="announcement.html">Read More...</a></span>
+              </p>
+              <div class="card-footer d-flex justify-content-between">
+                <div class="recruiter">
+                </div>
+              </div>
+            </div>
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vh-50">
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-div pt-4">
+        <ul>
+          <li>Training and Placement Officer</li>
+          <li>Phone Number : +91 9876543210</li>
+          <li>Email: <a class="footer-email-link" href="mailto:demo@gmail.com">demo@gmail.com</a></li>
+          <li><a class="footer-links" href="#">CONTACT</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>LBS-Placement Cell</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://lbt.ac.in/">LBS</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <!-- <script src="{% {% static'vendor/swiper/swiper-bundle.min.js"></script> -->
+  <script src="{% static 'vendor/waypoints/noframework.waypoints.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      animateOut: 'fadeOut',
+      autoplay: true,
+      autoplayTimeout: 3000,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 1
+        },
+        1000: {
+          items: 1
+        }
+      }
+    })
+
+
+
+  </script>
+
+</body>
+
+</html>

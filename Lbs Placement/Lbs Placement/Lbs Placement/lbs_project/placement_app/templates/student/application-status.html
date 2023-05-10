@@ -1,0 +1,70 @@
+{% extends 'student/studentheader.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        .form-check-input {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #000;
+        }
+    </style>
+
+    <div class="container">
+        <h1 class="text-center mt-4">Application Status</h1>
+{% if acount > 0 %}
+    
+        <div class="note text-end text-danger mr-3">
+            <span>Note:</span>
+         <i class="fa-solid fa-check"></i><span class="mr-2">-Accepted</span>
+         <i class="fa-solid fa-x"></i><span class="mr-2">-Rejected</span>
+         <i class="fa-solid fa-handshake"></i><span class="mr-2">-Placed</span>
+        </div>
+     
+        
+       
+        <table class="table table-bordered mt-5" border="1" style="border:1px solid #000">
+            <thead>
+                <tr class="table-warning" style="border:2px solid #000">
+                    <th scope="col" width="5%">Sl.No</th>
+                    <th scope="col" width="35%">Company Name</th>
+                    <th scope="col" width="35%">Job Position</th>
+                    <th scope="col" width="10%">Eligibility</th>
+                    <th scope="col" width="15%">Response</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {% for x in applications %}
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{x.job_post.company_id.company_name}}</td>
+                    <td>
+                        <p  data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{x.job_post.job_description}}">
+                            {{x.job_post.job_position}}
+                        </p></td>
+                    <td>{{x.Eligibilty}}</td>
+                    <form action="/jobpost_response/{{x.id}}" method="POST">
+                        {% csrf_token %}
+                    <td>
+                   
+                        <button  name="statusone" value="Accept" class="btn btn-success">
+                            <i class="fa-solid fa-check"></i>
+                        </button>
+                        
+                        <button  name="statustwo" value="Reject" class="btn btn-danger">
+                            <i class="fa-solid fa-x"></i>
+                        </button>
+                       
+                        <button  name="statusthree" value="Placed" class="btn btn-warning " > <i class="fa-solid fa-handshake"></i></button></td>
+                        </form>
+                       
+                </tr>
+                {% endfor %}
+              
+
+            </tbody>
+        </table>
+        {% else %}
+        <h2 style="text-align: center;">There is no Job application</h1>
+        {% endif %}
+    </div>
+   {% endblock %}

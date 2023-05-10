@@ -1,0 +1,64 @@
+{% extends 'Company/company_header.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        .verify {
+            border: none;
+            background-color: transparent;
+        }
+    </style>
+
+    <div class="container">
+        <h1 class="text-center mt-4">Student Responses</h1>
+        <form method="GET" class="mt-5 mb-3">
+            <div class="input-group">
+                <select name="job_post" class="form-select">
+                    <option value="">All job posts</option>
+                    {% for post in job_posts %}
+                    <option value="{{ post.id }}" {% if post.id == selected_job_post %}selected{% endif %}>{{ post.job_position }}</option>
+
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn btn-primary">Filter</button>
+            </div>
+        </form>
+
+        <table class="table table-bordered mt-5" border="1" style="border:1px solid #000">
+            <thead>
+                <tr class="table-warning" style="border:2px solid #000">
+                    <th scope="col" width="5%">Sl.No</th>
+                    <th scope="col" width="5%">Job Position</th>
+                    <th scope="col" width="20%">Student Name</th>
+                    <th scope="col" width="10%">Year</th>
+                    <th scope="col" width="10%">Semester</th>
+                    <th scope="col" width="10%">Backlog</th>
+                    <th scope="col" width="15%">Resume</th>
+                    <th scope="col" width="15%">Response</th>
+                    <th scope="col" width="15%">Schedule Interview</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {% for x in response %}
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <th scope="row">{{x.job_post.job_position}}</th>
+                    <td scope="row">{{x.student.name}}</td>
+                    <td scope="row">{{x.student.year}}</td>
+                    <td scope="row">{{x.student.sem}}</td>
+                    <td scope="row">{{x.student.backlog}}</td>
+                    <td scope="row">
+                        <p  data-bs-toggle="tooltip" data-bs-placement="bottom" title="click here to view resume">
+                            <a href="{{ x.student.resume.url }}" target="_blank">{{x.student.resume}}</a>
+                        </p></td>
+                    
+                    <td scope="row">{{x.status}}</td>
+                    <td scope="row">
+                        <a href="/Schedule_interview/{{x.id}}"><button type="button" class="btn btn-primary">Schedule</button></a>
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+   {% endblock %}

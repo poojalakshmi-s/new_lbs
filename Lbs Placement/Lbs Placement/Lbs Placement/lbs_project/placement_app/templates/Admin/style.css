@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #dee0e5 !important;
+  min-height: 100vh;
+  height: 100%;
+}
+.dashb {
+  margin-top: 100px;
+}
+.add-sm {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background: #fff;
+  padding: 12px;
+  width: 60%;
+  border: none !important;
+  margin-bottom: 50px;
+  height: fit-content !important;
+  border-radius: 15px !important;
+}
+.job-header {
+  font-family: "Bebas Neue", cursive;
+  font-weight: 800;
+}
+.marquee {
+  height: 205px;
+  width: 420px;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee div {
+  display: block;
+  width: 200%;
+  height: 200px;
+  position: absolute;
+  overflow: hidden;
+  animation: marquee 5s linear infinite;
+}
+
+.marquee span {
+  float: left;
+  width: 50%;
+}
+.card-body-list {
+  list-style: none;
+  line-height: 2;
+  padding-inline-start: 0;
+  margin-bottom: 0;
+}
+.card-img-top {
+  width: 60px !important;
+  display: block;
+  margin: 20px auto;
+}
+.card-body-list li {
+  font-size: 1em;
+  background-color: #3c6ee0 !important;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: justify;
+  margin: 10px 0;
+}
+.card-body-list li::first-letter {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+.card-div label {
+  padding-left: 5px;
+}
+.card-div .form-control,
+.card-div .form-select {
+  background-color: #e9edf0;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: none !important;
+}
+.card-div .form-control::placeholder {
+  color: #555;
+}
+.tpo-submit {
+  width: 100%;
+  max-width: 250px;
+}
+@keyframes marquee {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -100%;
+  }
+}

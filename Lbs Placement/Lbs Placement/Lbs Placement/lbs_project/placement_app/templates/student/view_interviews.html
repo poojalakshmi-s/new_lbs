@@ -1,0 +1,45 @@
+
+{% extends 'student/studentheader.html' %}
+{% load static %}
+{% block content %}
+
+{% if scheduled_interviews %}
+    <h2>Scheduled Interviews</h2>
+    <table class="table table-bordered mt-5" border="1" style="border:1px solid #000">
+        <thead>
+            <tr>
+                <th>Company</th>
+                <th>Job Position</th>
+                <th>Interview Scheduled</th>
+                <th>Instructions</th>
+                <th>Interview Link</th>
+                <th>Interview Mode</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for interview in scheduled_interviews %}
+                <tr>
+                    <td>{{ interview.job_post_idss.job_post.company_id.company_name }}</td>
+                    <td>{{ interview.job_post_idss.job_post.job_position }}</td>
+                    <td>{{ interview.interview_scheduled }}</td>
+                    <td>{{ interview.instructions|slice:":50" }}
+                        <a href="#ex1-{{interview.id}}" rel="modal:open" class="toggle-descr" id="view-more-{{interview.id}}">View more</a>
+
+                            
+                      
+                        <div id="ex1-{{interview.id}}" class="modal">
+                            <h3 style="text-align: center;">Interview Instructions</h3>
+                            <p style="text-align: justify">{{ interview.instructions }}</p>
+                          </div>
+                    </td>
+
+                    <td>{{ interview.interview_link }}</td>
+                    <td>{{ interview.interview_mode }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No scheduled interviews.</p>
+{% endif %}
+{% endblock %}

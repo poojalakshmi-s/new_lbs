@@ -1,0 +1,43 @@
+{% extends 'Company/company_header.html' %}
+{% load static %}
+{% block content %}
+
+
+
+    <h2>Scheduled Interviews</h2>
+    <table class="table table-bordered mt-5" border="1" style="border:1px solid #000">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Time</th>
+                <th>Mode</th>
+                <th>Position</th>
+                <th>Response</th>
+                <th>Remark</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for interview in scheduled %}
+                <tr>
+                   
+                    <td>{{ interview.job_post_idss.student.name }}</td>
+                    <td>{{ interview.interview_scheduled }}</td>
+                    <td>{{ interview.interview_mode }}</td>
+                    <td>{{ interview.job_post_idss.job_post.job_position }}
+                    <td>
+                        <select name="interview_response" class="form-control">
+                            <option>Choose Result</option>
+                            <option value="Shortlisted">Shortlisted</option>
+                            <option value="Rejected">Rejected</option>
+                            <option value="Hold">Hold</option>
+                        </select>
+                    </td>
+                    <td><textarea rows="3" name="remarks"></textarea></td>
+                    <td><button class="btn btn-success" type="submit">Update</button></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

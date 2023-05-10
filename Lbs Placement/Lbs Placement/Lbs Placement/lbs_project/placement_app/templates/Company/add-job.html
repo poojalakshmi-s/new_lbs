@@ -1,0 +1,58 @@
+{% extends 'Company/company_header.html' %}
+{% load static %}
+{% block content %}
+<section class="add-sm">
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="card-div d-flex justify-content-center align-items-center">
+            <div class="card">
+                <img src="add-tpo.png" class="card-img-top" alt="Job Posts">
+                <h4 class="text-center job-header">Add Job Oppurtunities</h4>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {% if messages %} {% for message in messages %}
+                        <div class="alert alert-danger">{{message}}</div>
+                        {% endfor %} {% endif %}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mb-4">
+                                    <label for="position" class="form-label">Job Position</label>
+                                    <input type="text" class="form-control" name="job_position" id="position"
+                                        aria-describedby="name" placeholder="Enter Job Position">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-4">
+                                    <label for="details" class="form-label">Job Description</label>
+                                    <textarea class="form-control" id="details" name="job_description" placeholder="responsibilities,package all include here" rows="4"
+                                        style="text-align: left;">
+
+                                    </textarea>
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-4">
+                                    <label for="gender" class="form-label">Criteria</label>
+                                    <select multiple name="job_criteria" class="selectpicker form-control"
+                                        data-style="py-0" aria-label="Select">
+                                        <option>Select</option>
+                                        <option value="No Backlog">No Backlog</option>
+                                        <option value="CGPA 75 or above">CGPA 75 or above</option>
+                                        <option value="6-7th semester">6-7th semester</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary tpo-submit">Submit</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

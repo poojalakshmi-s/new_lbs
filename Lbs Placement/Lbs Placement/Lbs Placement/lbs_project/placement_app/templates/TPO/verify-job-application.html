@@ -1,0 +1,89 @@
+{% extends 'TPO/tpo_header.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        .verify {
+            border: none;
+            background-color: transparent;
+        }
+        .modal{
+            height: fit-content;
+            width: fit-content;
+            overflow: initial;
+            max-width: 700px!important;
+        }
+    </style>
+
+    <div class="container">
+        <h1 class="text-center mt-4">Verify Job Application </h1>
+        {% if messages %} {% for message in messages %}
+        <div class="alert alert-danger">{{message}}</div>
+        {% endfor %} {% endif %}
+        <div class="row mt-5 me-2">
+            <div class="col-md-6"></div>
+            <div class="col-md-6">
+                <div class="d-flex justify-content-end">
+                    <div class="sticker-info d-flex">
+                        <div class="me-4 d-flex align-items-center">
+                            <img src="{% static 'img/tick.jpeg' %}" width="25" class="me-1">
+                            <span class="h6 mb-0">Confirm</span>
+                        </div>
+                        <div class="ms-3 d-flex align-items-center">
+                            <img src="{% static 'img/close.jpeg' %}" width="25" class="me-1">
+                            <span class="h6 mb-0">Reject</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered mt-2" border="1" style="border:1px solid #000">
+            <thead>
+                <tr class="table-warning" style="border:2px solid #000">
+                    <th scope="col" width="5%">Sl.No</th>
+                    <th scope="col" width="25%">Company Name</th>
+                    <th scope="col" width="25%">Contact Person Name</th>
+                    <th scope="col" width="25%">Contact Person Number</th>
+                    <th scope="col" width="25%">Job Position</th>
+                    <th scope="col" width="30%">Job Description</th>
+                    <th scope="col" width="15%">Response</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {% for x in posts %}
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{x.company_id.company_name}}</td>
+                    <td>{{x.company_id.contact_person_name}}</td>
+                    <td>{{x.company_id.contact_person_number}}</td>
+                    <td>{{x.job_position}}</td>
+                    <td>
+                        {{ x.job_description|slice:":50" }}
+                       
+                        <a href="#ex1-{{x.id}}" rel="modal:open" class="toggle-descr" id="view-more-{{x.id}}">View more</a>
+
+                            
+                      
+                        <div id="ex1-{{x.id}}" class="modal">
+                            <h3 style="text-align: center;">Job Description</h3>
+                            <p style="text-align: justify">{{ x.job_description }}</p>
+                          </div>
+                    </td>
+                
+                    </td>
+                    <form action="/Verify/{{x.id}}" method="POST">
+                        {% csrf_token %}
+                       
+                    <td>
+                        <div class="d-flex justify-content-around">
+                            <button class="verify" name="verifyone" value="Verified" ><img src="{% static 'img/tick.jpeg' %}" width="40"></button>
+                            <button class="verify" name="verifytwo" value="Rejected"><img src="{% static 'img/close.jpeg' %}" width="40"></button>
+                        </div>
+                    </td>
+                    </form>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+  
+    {% endblock %}
