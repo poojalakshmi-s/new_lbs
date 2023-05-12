@@ -21,10 +21,15 @@
 <body>
   <div class="sidebar">
     <div class="logo-details ">
-      <img src="{% static 'img/avatar.png' %}" width="40%" class="mx-5 my-2">
+      {% for x in stud_d %}
+      <img src="{{ x.stud_image.url }}" width="40%" class="mx-5 my-2">
+      {% endfor %}
+     
 
     </div>
-    <h4 class="logo_name d-block mx-auto" style="width: fit-content;">Name</h4>
+    {% for x in stud_d %}
+    <h4 class="logo_name d-block mx-auto" style="width: fit-content;">{{x.name}}</h4>
+    {% endfor %}
     <ul class="nav-links">
      
       <li>

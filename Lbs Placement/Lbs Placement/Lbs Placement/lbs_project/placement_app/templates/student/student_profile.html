@@ -5,8 +5,9 @@
 
 <div class="container m-2">
     <div class="card mx-auto p-3" style="width: 28rem;">
-
-        <img src="{{ stud.stud_image.url }}" class="card-img-top w-50 mx-auto" alt="...">
+        {% for x in stud %}
+        <img src="{{ x.stud_image.url }}" class="card-img-top w-50 mx-auto" alt="...">
+        {% endfor %}
         <div class="card-body">
             <h4 class="card-title mx-auto" style="width:fit-content;">Name</h4>
             <div class="detail-box">

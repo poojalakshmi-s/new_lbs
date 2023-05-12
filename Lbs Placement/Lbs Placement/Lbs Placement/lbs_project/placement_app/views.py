@@ -85,6 +85,12 @@ def Login_page(request):
 
 
 # <!!!!!!!!!!!!!!student!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!>
+def stud_header(request):
+    SessionId = request.session['id']
+    stud_d = Student.objects.filter(id=SessionId)
+    context={'stud_d':stud_d}
+    return render(request,'Student/studentheader.html',context)
+
 def student_dashboard(request):
     SessionId = request.session['id']
     stud = Student.objects.filter(id=SessionId)
@@ -105,8 +111,9 @@ def student_profile(request):
 
 
 def Edit_student(request, id):
+    SessionId = request.session['id']
     stud = Student.objects.get(id=id)
-
+    stud_d = Student.objects.filter(id=SessionId)
     if request.method == 'POST':
         stud.name = request.POST['name']
         stud.branch = request.POST['branch']
@@ -125,7 +132,7 @@ def Edit_student(request, id):
         return redirect(student_profile)
 
     context = {
-        'stud': stud
+        'stud': stud,'stud_d':stud_d
     }
     return render(request, 'student/editstudent.html', context)
 
